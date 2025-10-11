@@ -1,12 +1,12 @@
 
 import "./index.css"
-const UsrCard = () => {
+const UsrCard = ({Name, Email, Role}) => {
   return (
     <div className="userCard">
-      <h1>Exercise #1</h1>
-
-      <h2>Abdalla</h2>
-      <p>Abdalla@Som.so</p>
+       
+      <p>Name:{Name}</p>
+      <p> Email:{Email }</p>
+      <p>Role: {Role }</p>
     </div>
   );
 };
