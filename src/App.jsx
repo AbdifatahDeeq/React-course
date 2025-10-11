@@ -1,10 +1,13 @@
 import UsrCard from "./UsrCard.jsx";
-
+import Layout from "./Layout"
 
 
 function App() {
   return (
-      <UsrCard />
+    <div>
+     
+      <Layout />
+    </div>
   );
 }
 

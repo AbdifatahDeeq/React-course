@@ -1,18 +1,27 @@
 *{
-  background-color: aqua;
-  color: black;
+ 
   margin: auto;
   box-sizing: border-box;
 }
-.userCard{
-  align-items: center;
+body{
   text-align: center;
+  margin-top: 20px;
+  background-color: rgb(56, 48, 48);
+  color: white;
+  padding: 1.5rem;
+  margin: 2rem;
+}
+
+h1{
+  background-color: aquamarine;
+  color: black;
+ 
+}
+h3{
+ height: 40vh;
   margin-top: 10%;
-  background-color: rgb(163, 131, 131);
-  width: 20%;
-  box-sizing: border-box;
-  height: 20%;
-  z-index: -1;
-  border: 5px solid black;
-  padding: 10px;
+}
+p{
+  background-color: aqua;
+  color: black;
 }
