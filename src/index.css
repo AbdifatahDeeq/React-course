@@ -1,0 +1,18 @@
+*{
+  background-color: aqua;
+  color: black;
+  margin: auto;
+  box-sizing: border-box;
+}
+.userCard{
+  align-items: center;
+  text-align: center;
+  margin-top: 10%;
+  background-color: rgb(163, 131, 131);
+  width: 20%;
+  box-sizing: border-box;
+  height: 20%;
+  z-index: -1;
+  border: 5px solid black;
+  padding: 10px;
+}
