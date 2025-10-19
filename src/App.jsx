@@ -1,10 +1,7 @@
+import ShoppingCart from "./ShoppingCart";
 
-import OnOff from "./OnOff.jsx"
-function App() {
- 
-  return (
-    <OnOff />
-  );
-}
+const App = () => {
+  return <ShoppingCart />;
+};
 
 export default App;
