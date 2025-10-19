@@ -1,7 +1,7 @@
-import ShoppingCart from "./ShoppingCart";
+
+import UseEffect from "./UseEffect";
 
 const App = () => {
-  return <ShoppingCart />;
-};
-
-export default App;
+  return <UseEffect />;
+}
+export default App

@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 
 
 const ShoppingCart = () => {
+   const [title] = useState("SS-CART");
+  useEffect(() => {
+    document.title = title;
+  }, [title]); // <-- add dependency
+
 const [products, setProducts] = useState([]);
 const [productName, setProductName] = useState("");
 const [productPrice, setProductPrice] = useState("");
