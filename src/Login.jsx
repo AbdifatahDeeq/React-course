@@ -11,7 +11,7 @@ const Login = () => {
       setIsLoggedIn(true);
       setMessage("");
     } else {
-      setMessage("Please enter username and password");
+      setMessage("Please enter the user validation ");
     }
   };
 
