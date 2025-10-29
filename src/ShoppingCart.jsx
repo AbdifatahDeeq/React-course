@@ -167,7 +167,7 @@ style={{
       color: "white",
       padding: "10px 30px",
       borderRadius: "5px",
-      textAlign: "center",
+    
     }}
   >
     <table>
