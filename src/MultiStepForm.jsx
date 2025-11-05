@@ -17,7 +17,7 @@ const MultiStepForm = () => {
   const reset = () => dispatch({ type: "RESET" });
 
   const handleSubmit = () => {
-    alert("The form was submitted successfully!");
+    alert("Hi! The form was submitted successfully!");
     reset();
   };
 
@@ -102,7 +102,7 @@ const MultiStepForm = () => {
 
       {state.step > 3 && (
         <div>
-          <h3>Form Completed</h3>
+          <h3>Your form has been Completed</h3>
           <button onClick={reset}>Start Over</button>
         </div>
       )}
