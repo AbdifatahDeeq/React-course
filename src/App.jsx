@@ -1,9 +1,12 @@
+import React from "react";
+import MultiStepForm from "./MultiStepForm";
 
-import DoubleCounter from "./DoubleCounter";
-
-
-const App = () => {
-  
-  return<DoubleCounter/>
+function App() {
+  return (
+    <div>
+      <MultiStepForm />
+    </div>
+  );
 }
+
 export default App;
