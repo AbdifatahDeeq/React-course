@@ -1,12 +1,15 @@
-import LanguageContext from "./LangauageContext";
 import { useContext } from "react";
-const LangaugeComponent = () => {
-  const lang =useContext (LanguageContext)
-   const greet = lang === "English" ? "Hello" : "Hoi"
+import LangauageContext from "./LangauageContext";
+
+const LangauageComponent = () => {
+  const Lang = useContext(LangauageContext);
+  const swtch = Lang ==="English"? "Hello!" :" Hoi!"
+  
+
   return (
-    <div>
-     {greet } this is {lang}
-    </div>
+    <>
+      {swtch} This is {Lang}
+    </>
   )
 }
-export default LangaugeComponent;
+export default LangauageComponent;
