@@ -3,9 +3,10 @@ import LangauageContext from "./LangauageContext";
 
 const LangauageComponent = () => {
   const Lang = useContext(LangauageContext);
-  const swtch = Lang ==="English"? "Hello!" :" Hoi!"
-  
-
+  const swtch = {
+    e: "English",
+    s: "Spanish"
+  }
   return (
     <>
       {swtch} This is {Lang}

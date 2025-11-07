@@ -1,22 +1,33 @@
-import React, { useState }  from "react"  
-import LangauageContext from "./LangauageContext"
+import React, { useState } from "react";
+import CartContext from "./CartContext";
+import SummaryCart from "./SummeryCart";
+import ProductCart from "./ProductCart";
 
-const App = () => {
-  const [Lang, SetLang] = useState()
-  
-  const LangSwitch = () => {
-    SetLang((PreviousLang) => PreviousLang === "English" ? "Spanish" : "English");
-  }
+function App() {
+  const [cartItems, setCartItems] = useState([]);
 
+  const addToCart = (item) => {
+    setCartItems([...cartItems, item]);
+  };
+
+  const removeFromCart = (itemId) => {
+    setCartItems(cartItems.filter((item) => item.id !== itemId));
+  };
+
+  const value = { cartItems, addToCart, removeFromCart };
 
   return (
-    <>
-      Hello!
-      <LangauageContext.Provider>
-        <button onClick={LangSwitch}>Switch to {Lang =="English" ? "Spanish" : "English"} </button>
-        <p>{Lang === "English" ? "Hello" : "¡Hola!"}</p>
-      </LangauageContext.Provider>
-    </>
+    <CartContext.Provider value={value}>
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <h1>🛍️ My Shop</h1>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <ProductCart itemId={1} itemName="Widget" price={19.99} />
+          <ProductCart itemId={2} itemName="Gadget" price={29.99} />
+        </div>
+        <SummaryCart />
+      </div>
+    </CartContext.Provider>
   );
 }
+
 export default App;

@@ -1,20 +1,29 @@
-import { useContext } from "react";
-import { CartContext } from "./CartContext";
+import React, { useContext } from "react";
+import CartContext from "./CartContext";
 
-const ProductCart = ({ itemId, itemName, price }) => {
-  const { addCart } = useContext(CartContext);
+function ProductItem({ itemId, itemName, price }) {
+  const { addToCart } = useContext(CartContext);
 
-  const handleCart = () => {
-    addCart({ id: itemId, name: itemName, price: price });
+  const handleAdd = () => {
+    const item = { id: itemId, name: itemName, price };
+    addToCart(item);
   };
 
   return (
-    <div>
-      <p>{itemName}</p>
+    <div
+      style={{
+        border: "1px solid #ccc",
+        borderRadius: "8px",
+        margin: "10px",
+        padding: "10px",
+        width: "200px",
+      }}
+    >
+      <h3>{itemName}</h3>
       <p>Price: ${price}</p>
-      <button onClick={handleCart}>Add to Cart</button>
+      <button onClick={handleAdd}>Add to Cart</button>
     </div>
   );
-};
+}
 
-export default ProductCart;
+export default ProductItem;
