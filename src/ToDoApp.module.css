@@ -5,6 +5,10 @@ body {
   align-items: center;        
   margin: 10px;                 
 }
+.tittle{
+  font-size: large;
+  margin-top: 1px;
+}
 
 .Container {
   background-color: white;
@@ -16,12 +20,15 @@ body {
   margin: 10px;
  
 }
+input{
+  padding: 9px;
+}
 
 .AddBtn {
   background-color: blueviolet;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 30px;
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;

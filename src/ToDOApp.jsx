@@ -1,5 +1,5 @@
 import { useReducer, useState } from "react";
-import styles from "./ToDoApp.module.css"
+import styles from "./ToDoApp.module.css";
 
 const initialState = [];
 
@@ -23,33 +23,28 @@ const reducer = (state, action) => {
 const ToDoApp = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [text, setText] = useState("");
-  const [descrip, setDescrip] = useState("");
+
 
   const handleAdd = () => {
-    if (text.trim() && descrip.trim()) {
+    if (text.trim() ) {
       const newTodo = {
         id: Date.now(),
         text,
-        descrip,
+       
         completed: false,
       };
       dispatch({ type: "Add", payload: newTodo });
       setText("");
-      setDescrip("");
+    
     }
   };
 
-  const handleDelete = (id) => {
-    dispatch({ type: "delete", payload: id });
-  };
-
-  const handleToggle = (id) => {
-    dispatch({ type: "toggle", payload: id });
-  };
+  const handleDelete = (id) => dispatch({ type: "delete", payload: id });
+  const handleToggle = (id) => dispatch({ type: "toggle", payload: id });
 
   return (
     <div className={styles.Container}>
-      <h3>To-Do List Management System</h3>
+      <h3 className={styles.title}>To-Do List Management System</h3>
 
       <div>
         <input
@@ -58,9 +53,10 @@ const ToDoApp = () => {
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-        <br />
         
-        <button onClick={handleAdd} className={styles.AddBtn}>Add</button>
+        <button onClick={handleAdd} className={styles.AddBtn}>
+          Add
+        </button>
       </div>
 
       <ol>
@@ -68,12 +64,27 @@ const ToDoApp = () => {
           <li
             key={item.id}
             style={{
-              textDecoration: item.completed ? "line-through" : "none",
+              textDecoration: item.completed ? "*" : "none",
             }}
           >
-            {item.text} 
-            <button onClick={() => handleDelete(item.id)} className={styles.AddBtn2}>Delete</button>
-            <button onClick={() => handleToggle(item.id)} className={styles.AddBtn2}>
+            <input
+              type="checkbox"
+              checked={item.completed}
+              onChange={() => handleToggle(item.id)}
+            />
+            <span style={{ marginLeft: "8px" }}>
+              {item.text} — {item.descrip}
+            </span>
+            <button
+              onClick={() => handleDelete(item.id)}
+              className={styles.AddBtn2}
+            >
+              Delete
+            </button>
+            <button
+              onClick={() => handleToggle(item.id)}
+              className={styles.AddBtn2}
+            >
               {item.completed ? "Undo" : "Completed"}
             </button>
           </li>
