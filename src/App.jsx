@@ -1,12 +1,13 @@
+import ToDoApp from "./ToDOApp";
+import styles from "./ToDoApp.module.css"
 
-import ContactApp from "./ContactApp"
-
-function App() {
+const App = () => {
+   
   return (
-    <div>
-      <ContactApp />
+    <div className={styles.Container}>
+      <ToDoApp  />
+    
     </div>
   );
 }
-
-export default App;
+ export default App;

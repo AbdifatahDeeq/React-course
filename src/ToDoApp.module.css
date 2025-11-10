@@ -1,0 +1,42 @@
+body {
+  background-color: rgb(175, 159, 159);
+  display: flex;              
+  justify-content: center;     
+  align-items: center;        
+  margin: 10px;                 
+}
+
+.Container {
+  background-color: white;
+  color: black;
+  text-align: center;
+  align-items: center;
+  width: auto;
+  padding: 40px;
+  margin: 10px;
+ 
+}
+
+.AddBtn {
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+}
+.AddBtn2 {
+  background-color: rgb(23, 31, 31);
+  color: yellow;
+  border: none;
+  padding: 2px 20px;
+  border-radius: 6px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.AddBtn:hover {
+  background-color: rgb(110, 40, 170);
+}
