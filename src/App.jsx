@@ -1,9 +1,10 @@
-import PersonalInfo from "./PersonalInfo";
+
+import ContactApp from "./ContactApp"
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-      <PersonalInfo/>
+    <div>
+      <ContactApp />
     </div>
   );
 }
