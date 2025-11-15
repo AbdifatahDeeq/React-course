@@ -1,5 +1,4 @@
 import { useReducer, useState } from "react";
-import styles from "./ToDoApp.module.css";
 
 const initialState = [];
 
@@ -24,18 +23,15 @@ const ToDoApp = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [text, setText] = useState("");
 
-
   const handleAdd = () => {
-    if (text.trim() ) {
+    if (text.trim()) {
       const newTodo = {
         id: Date.now(),
         text,
-       
         completed: false,
       };
       dispatch({ type: "Add", payload: newTodo });
       setText("");
-    
     }
   };
 
@@ -43,55 +39,60 @@ const ToDoApp = () => {
   const handleToggle = (id) => dispatch({ type: "toggle", payload: id });
 
   return (
-    <div className={styles.Container}>
-      <h3 className={styles.title}>To-Do List Management System</h3>
+    <div className="bg-purple-300 p-6 text-white flex flex-col  h-screen w-full items-center">
+      <div className="bg-white rounded-lg item-center w-2xm-10 flex flex-col p-10 ">
+        <h3 className="bg-gray-50 text-black text-xl font-bold p-3   ">
+          To-Do List Management System
+        </h3>
 
-      <div>
-        <input
-          type="text"
-          placeholder="Task title"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-        
-        <button onClick={handleAdd} className={styles.AddBtn}>
-          Add
-        </button>
-      </div>
+        <div className="mt-4 flex gap-2 w-full">
+          <input
+            type="text"
+            placeholder="Task title"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            className="px-3 py-2 rounded border border-gray-300 text-black w-full"
+          />
 
-      <ol>
-        {state.map((item) => (
-          <li
-            key={item.id}
-            style={{
-              textDecoration: item.completed ? "*" : "none",
-            }}
+          <button
+            onClick={handleAdd}
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
           >
-            <input
-              type="checkbox"
-              checked={item.completed}
-              onChange={() => handleToggle(item.id)}
-            />
-            <span style={{ marginLeft: "8px" }}>
-              {item.text} — {item.descrip}
-            </span>
-            <button
-              onClick={() => handleDelete(item.id)}
-              className={styles.AddBtn2}
+            Add
+          </button>
+        </div>
+
+        <ol className="mt-6 space-y-3">
+          {state.map((item) => (
+            <li
+              key={item.id}
+              className="flex items-center gap-3 bg-gray-200 p-2  rounded-lg  text-black"
             >
-              Delete
-            </button>
-            <button
-              onClick={() => handleToggle(item.id)}
-              className={styles.AddBtn2}
-            >
-              {item.completed ? "Undo" : "Completed"}
-            </button>
-          </li>
-        ))}
-      </ol>
+              <input className="text-2xl font-bold cursor-pointer"
+                type="checkbox"
+                checked={item.completed}
+                onChange={() => handleToggle(item.id)}
+              />
+
+              <span className={item.completed ? "line-through" : ""}>
+                {item.text}
+              </span>
+
+              <button
+                onClick={() => handleDelete(item.id)}
+                className={item.completed ? "ml-auto text-red-500 px-3 py-1 rounded hover:bg-red-600 " :"hidden"} 
+              >
+                Delete
+              </button>
+            </li>
+          ))}
+        </ol>
+      </div>
     </div>
   );
 };
 
 export default ToDoApp;
+
+
+           

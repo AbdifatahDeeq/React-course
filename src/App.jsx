@@ -1,13 +1,12 @@
-import ToDoApp from "./ToDOApp";
-import styles from "./ToDoApp.module.css"
 
+import ToDoApp from "./ToDOApp";
 const App = () => {
-   
-  return (
-    <div className={styles.Container}>
-      <ToDoApp  />
-    
-    </div>
-  );
-}
- export default App;
+
+  return(
+  <div>
+    <ToDoApp />
+  </div>)
+  
+};
+
+export default App;
