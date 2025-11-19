@@ -1,10 +1,11 @@
 
-import ToDoApp from "./ToDOApp";
+
+
 const App = () => {
 
   return(
   <div>
-    <ToDoApp />
+  
   </div>)
   
 };

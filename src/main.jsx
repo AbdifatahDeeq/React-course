@@ -1,11 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import ToDoApp from "./ToDOApp";
-
+import "./index.css"; // <-- important!
+import Student from "./Student";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ToDoApp/>
+    <Student />
   </React.StrictMode>
 );
