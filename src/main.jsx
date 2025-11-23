@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css"; // <-- important!
-import Student from "./Student";
+// import "./index.css"; // <-- important!
+import FormData from "./FormData";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Student />
+    <FormData />
   </React.StrictMode>
 );
